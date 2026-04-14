@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "echo 'WHITEBOARD MODE ACTIVE. Rules: Every response = pseudocode, algo steps, or diagram notation. No prose sentences. Indentation = scope. // for comments. → for causality/flow. Real code blocks unchanged. Technical terms exact. Stop: stop whiteboard or normal mode. Sub-skills: /whiteboard-explain /whiteboard-debug /whiteboard-design.'"
+      }
+    ]
+  }
+}

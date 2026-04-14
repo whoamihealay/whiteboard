@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "whiteboard",
+  "description": "Whiteboard pseudocode mode for Claude Code. All responses in pseudocode, algo notation, or diagram-style — zero prose, full technical accuracy.",
+  "owner": {
+    "name": "YOUR_USERNAME",
+    "url": "https://github.com/YOUR_USERNAME"
+  },
+  "plugins": [
+    {
+      "name": "whiteboard",
+      "description": "Think in diagrams. Draw the answer. Word is weakness. Box and arrow = truth.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

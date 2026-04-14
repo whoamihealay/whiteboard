@@ -1,0 +1,72 @@
+name: Sync skill
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/whiteboard/SKILL.md"
+      - "rules/whiteboard-activate.md"
+      - "skills/whiteboard-explain/SKILL.md"
+      - "skills/whiteboard-debug/SKILL.md"
+      - "skills/whiteboard-design/SKILL.md"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Sync SKILL.md to all destinations
+        run: |
+          SRC="skills/whiteboard/SKILL.md"
+          cp "$SRC" whiteboard/SKILL.md
+          cp "$SRC" .cursor/skills/whiteboard/SKILL.md
+          cp "$SRC" .windsurf/skills/whiteboard/SKILL.md
+          cp "$SRC" plugins/whiteboard/skills/whiteboard/SKILL.md
+
+      - name: Build Cursor rule (add frontmatter)
+        run: |
+          {
+            echo '---'
+            echo 'description: "Whiteboard mode — pseudocode responses, zero prose, full technical accuracy"'
+            echo 'alwaysApply: true'
+            echo '---'
+            echo ''
+            cat rules/whiteboard-activate.md
+          } > .cursor/rules/whiteboard.mdc
+
+      - name: Build Windsurf rule (add frontmatter)
+        run: |
+          {
+            echo '---'
+            echo 'trigger: always_on'
+            echo '---'
+            echo ''
+            cat rules/whiteboard-activate.md
+          } > .windsurf/rules/whiteboard.md
+
+      - name: Sync Cline + Copilot rules
+        run: |
+          cp rules/whiteboard-activate.md .clinerules/whiteboard.md
+          cp rules/whiteboard-activate.md .github/copilot-instructions.md
+
+      - name: Build whiteboard.skill ZIP
+        run: |
+          cd skills/whiteboard
+          zip -r ../../whiteboard.skill .
+          cd ../..
+
+      - name: Commit synced files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to sync."
+          else
+            git commit -m "chore: sync skill files [skip ci]"
+            git push
+          fi

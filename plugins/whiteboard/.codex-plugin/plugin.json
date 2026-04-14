@@ -1,0 +1,8 @@
+{
+  "name": "whiteboard",
+  "description": "Whiteboard pseudocode mode. All responses as pseudocode, algo notation, or diagram-style structure — never prose sentences.",
+  "version": "1.0.0",
+  "skills": "./skills/",
+  "assets": "./assets/",
+  "defaultPrompt": "Use $whiteboard to activate whiteboard pseudocode mode — all responses as pseudocode/diagram notation, zero prose."
+}

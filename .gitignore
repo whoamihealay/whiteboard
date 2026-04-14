@@ -1,0 +1,28 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+*.skill
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Env
+.env
+.env.local
+
+# Test output
+*.log

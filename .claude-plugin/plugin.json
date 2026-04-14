@@ -1,0 +1,34 @@
+{
+  "name": "whiteboard",
+  "description": "Whiteboard pseudocode mode. All responses expressed as pseudocode, algo notation, or diagram-style structure — never prose sentences.",
+  "author": {
+    "name": "YOUR_USERNAME",
+    "url": "https://github.com/YOUR_USERNAME"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/whiteboard-activate.js",
+            "timeout": 5,
+            "statusMessage": "Loading whiteboard mode..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/whiteboard-mode-tracker.js",
+            "timeout": 5,
+            "statusMessage": "Tracking whiteboard mode..."
+          }
+        ]
+      }
+    ]
+  }
+}

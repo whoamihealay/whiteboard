@@ -1,0 +1,2 @@
+description = "Debug using ERROR:/CAUSE:/FIX: block format"
+prompt = "Debug the issue using ERROR:/CAUSE:/FIX: block format. Quote the exact error. Show observed_state ≠ expected_state. Trace the causality chain. Give a concrete fix with reason. Add VERIFY block showing expected behavior after fix. No prose diagnosis — whiteboard notation only."

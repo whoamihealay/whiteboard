@@ -1,0 +1,6 @@
+{
+  "name": "whiteboard",
+  "description": "Whiteboard pseudocode mode. All responses as pseudocode, algo notation, or diagram-style — never prose sentences.",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}

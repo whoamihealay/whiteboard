@@ -1,0 +1,2 @@
+description = "Activate whiteboard pseudocode mode"
+prompt = "Activate whiteboard mode. All responses as pseudocode, algo steps, or diagram notation — no prose sentences. Indentation = scope. // for comments. → for causality/flow. ACTIVE EVERY RESPONSE until 'stop whiteboard' or 'normal mode'."

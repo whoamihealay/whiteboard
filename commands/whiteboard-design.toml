@@ -1,0 +1,2 @@
+description = "Design architecture using SYSTEM: diagram format"
+prompt = "Design the requested system using SYSTEM: diagram format. Use [Component] boxes and → arrows for data/control flow. Include: COMPONENTS (each with role), FLOW sections for each major interaction, TRADEOFF (+ easy, - hard), ALTERNATIVES with USE WHEN conditions. No prose — whiteboard boxes and arrows only."

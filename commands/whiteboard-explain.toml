@@ -1,0 +1,2 @@
+description = "Explain concept in CONCEPT: block format"
+prompt = "Explain the requested concept using CONCEPT: block format. Structure: name, one-line definition, COMPONENTS (each with role), FLOW (input → transform → output), TRADEOFF (+ benefits, - costs), WHEN TO USE. No prose sentences — whiteboard notation only."
