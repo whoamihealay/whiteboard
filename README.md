@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://em-content.zobj.net/source/apple/391/memo_1f4dd.png" width="120" />
+  <img src="icon.png" width="200" />
 </p>
 
 <h1 align="center">whiteboard</h1>
